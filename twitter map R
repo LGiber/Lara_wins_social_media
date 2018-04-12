@@ -1,0 +1,27 @@
+#install the necessary packages
+install.packages("twitteR")
+install.packages("wordcloud")
+install.packages("tm")
+
+library("twitteR")
+library("wordcloud")
+library("tm")
+
+#necessary file for Windows
+download.file(url="http://curl.haxx.se/ca/cacert.pem ", destfile="cacert.pem")
+
+#to get your consumerKey and consumerSecret see the twitteR documentation for instructions
+consumer_key <- 'TrviJZ5dHCmvHFEReiNa18RPX'
+consumer_secret <- '1jMvdshbHXs8TSl9q3lKV9QhOkwEbGgfResJymyVyjlLk6DwTH'
+access_token <- '213995172-Un1yzZGj8Geq693JTGLOGvsRHNdtsnNLeIMnCyVK'
+access_secret <- 'PfwivqpYz7tXGHnPhn9Y7KPDUIXGJ0bBtOMqYDtQfIM7T'
+setup_twitter_oauth(consumer_key,
+                    consumer_secret,
+                    access_token,
+                    access_secret)
+
+source("http://biostat.jhsph.edu/~jleek/code/twitterMap.R")
+twitterMap("navalny")
+twitterMap("navalny", fileName=”twitterMap.pdf”, nMax=1500)
+
+twitterMap("tolokno",userLocation="Moscow", fileName= "twitterMap6.pdf" , plotType="both" )
