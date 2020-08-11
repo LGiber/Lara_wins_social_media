@@ -34,7 +34,7 @@ while True:
 
         end_time = 1475508828  # int(t.mktime(b.timetuple())) #подставить unix-время если требуется сбор с определённого момента
 
-        print('Цербер начал собирать посты с:', end_time, dt.datetime.fromtimestamp(  # функция преобразования
+        print('Собираем посты с:', end_time, dt.datetime.fromtimestamp(  # функция преобразования
             int(end_time)
         ).strftime('%Y-%m-%d %H:%M:%S'))
 
